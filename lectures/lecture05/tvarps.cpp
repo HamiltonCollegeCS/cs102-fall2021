@@ -9,5 +9,13 @@
 
 // Controls operation of program.
 int main() {
+    double income = 0.0;
+    std::cout << "Enter income: ";
+    std::cin >> income;
+    while (income >= 0.0) {
+        // compute_tax
+        std::cout << "Enter income: ";
+        std::cin >> income;
+    }
     return 0;
 }
