@@ -7,13 +7,18 @@
  */
 #include <iostream>
 
+double compute_tax(double income) {
+    double tax = 0.0;
+    return tax;
+}
+
 // Controls operation of program.
 int main() {
     double income = 0.0;
     std::cout << "Enter income: ";
     std::cin >> income;
-    while (income >= 0.0) {
-        // compute_tax
+    while (income >= 0.0 && !std::cin.fail()) {
+        std::cout << "The tax is: " << compute_tax(income) << std::endl;
         std::cout << "Enter income: ";
         std::cin >> income;
     }
