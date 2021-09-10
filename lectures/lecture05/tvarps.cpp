@@ -11,7 +11,9 @@ double compute_tax(double income) {
     double tax = 0.0;
     if (income > 35000.0) {
         tax += 0.20 * (income - 35000.0);
+        income = 35000.0;
     }
+
     return tax;
 }
 
