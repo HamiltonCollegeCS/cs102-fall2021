@@ -1,7 +1,3 @@
-Ananab Tilps
-#6665
-
-Dave Perkins — Today at 10:03 AM
 #include <iostream>
 
 void print_array(const int * my_array, const size_t size) {
@@ -329,5 +325,3 @@ int main() {
     //run_split();
     return 0;
 }
-strings.cpp
-4 KB
