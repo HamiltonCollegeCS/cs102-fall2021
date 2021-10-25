@@ -1,39 +1,38 @@
 #include <iostream>
 
-const int MAX_ARRAY_SIZE = 16;
+using namespace std;
 
 void print_two_dee_array(/* You should write these parameters. */) {
     /* You should write this function. */
 }
 
 int main() {
-    std::cout << "\nEnter the number of subarrays for your array: ";
-    size_t num_pointers = 0;
-    std::cin >> num_pointers;
-    int* * two_dee_array = new int*[num_pointers];
-    int * subarray_sizes = new int[num_pointers];
-    for (size_t index = 0; index < num_pointers; index++) {
+    cout << "\nEnter the number of subarrays for your array: ";
+    size_t num_subarrays = 0;
+    cin >> num_subarrays;
+    int* * two_dee_array = new int*[num_subarrays];
+    size_t * subarray_sizes = new size_t[num_subarrays];
+    for (size_t index = 0; index < num_subarrays; index++)
         two_dee_array[index] = nullptr;
-    }
-    std::cout << "\nEnter the contents of each subarray as integers\n"
-              << "separated with spaces, like 13 11 29.\n\n";
-    for (size_t index = 0; index < num_pointers; index++) {
-        std::cout << "Enter the contents of subarray " << index << ": ";
-        int subarray[MAX_ARRAY_SIZE];
-        size_t current_size = 0;
+    cout << "\nEnter the size of your subarray first, followed by"
+         << "\nthe contents of each subarray as integers"
+         << "\nseparated with spaces, like 3 13 11 29.\n\n";
+    for (size_t index = 0; index < num_subarrays; index++) {
+        cout << "Enter the size and contents of subarray " << index << ": ";
+        size_t subarray_size = 0;
+        cin >> subarray_size;
+        int * subarray = new int[subarray_size];
+        size_t current_size_index = 0;
         while (true) {
             int input = 0;
-            std::cin >> input;
-            subarray[current_size] = input;
-            current_size++;
-            if (std::cin.peek() == '\n') {
-                break;
-            }
+            cin >> input;
+            subarray[current_size_index] = input;
+            current_size_index++;
+            if (cin.peek() == '\n') break;
         }
         /* You should write this missing code. */
     }
-    print_two_dee_array(two_dee_array, num_pointers, subarray_sizes);
+    print_two_dee_array(two_dee_array, num_subarrays, subarray_sizes);
 
     return 0;
 }
-
