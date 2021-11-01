@@ -15,24 +15,43 @@ using namespace std;
 
 class Racer {
 public:
+    /**
+     * Construct a Racer object from a given name and speed
+     * @param name the name for the Racer
+     * @param speed the speed of the Racer
+     */
     Racer(char name[], unsigned int speed) {
         cout << "constructor!" << endl;
         strcpy(_name, name);
         _speed = speed;
         _distance_traveled = 0;
     }
+    /**
+     * Construct a Racer object with an empty name and no speed
+     */
     Racer() {
         cout << "default constructor!" << endl;
         _name[0] = '\0';
         _speed = 0;
         _distance_traveled = 0;
     }
+    /**
+     * Get the distance traveled by the Racer.
+     * @return the distance traveled.
+     */
     unsigned int get_distance_traveled() {
         return _distance_traveled;
     }
+    /**
+     * Move the Racer forward proportional to its speed.
+     */
     void advance() {
         _distance_traveled += _speed;
     }
+    /**
+     * Get the Racer's name
+     * @return the Racer's name.
+     */
     char * get_name() {
         return _name;
     }
@@ -44,9 +63,15 @@ private:
 
 class Race {
 public:
+    /**
+     * The default constructor for Race: no racers.
+     */
     Race() {
         _num_racers = 0;
     }
+    /**
+     * Add the given Racer to the Race.
+     */
     void add_racer(Racer racer) {
         cout << "I'm adding " << racer.get_name() << endl;
         _racers[_num_racers++] = racer;
